@@ -13,12 +13,13 @@ void msgCallback(const msg_tutorial::Mymsg::ConstPtr& msg)
 
 int main(int argc, char** argv)
 {
-    ros::init(argc, argv, "msg_subscriber");
-    ros::NodeHandle nh;
+    ros::init(argc, argv, "msg_subscriber"); //노드이름초기화
+    ros::NodeHandle nh; //노드핸들선언
     
-    ros::Subscriber sub = nh.subscribe("burger", 30, msgCallback);
+    ros::Subscriber sub = nh.subscribe("burger", 30, msgCallback); 
+    //서브스크라이버 선언
 
-    ros::spin();
+    ros::spin(); //대기함수
 
     return 0;
 }

@@ -3,9 +3,9 @@
 
 ### Publisher Node
 
-- name :
+- name : msg_publisher, msg_subscriber
 - topic : burger
-- msg :
+- msg : Mymsg
 - 노드 설명
 
 ## msg 만드는 법
