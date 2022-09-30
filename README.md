@@ -37,6 +37,21 @@ my first ros study
     - my_server, my_client, py_server.py, py_client.py 노드 생성
     - 빌드
     - 실행
+
+### 2022년 9월 30일
+- [과제 2 yh_star](./yh_star)
+- for문 활용해서 별 찍기
+    - yh_star 패키지 생성
+    - yh_star_pub, yh_star_sub, yh_star_pub.py, yh_star_sub.py 노드생성
+    - 빌드
+    - 실행
+
+- [과제 3 yh_service](.yh_service)
+    - yh_service 패키지 생성
+    - yh_server, yh_client, yh_server.py, yh_client.py 노드 생성
+    - 빌드
+    - 실행
+    - 같음 이름의 서버는 하나밖에 못킴
     
 ## ROS 명령어
 ### roscore
@@ -62,6 +77,7 @@ lhk15477@gmail.com:~$ catkin_create_pkg <패키지이름> [의존성1] [의존�
 ex)
 ```bash
 lhk15477@gmail.com:~$ catkin_create_pkg topic_tutorial roscpp rospy std_msgs
+메시지시 message_generation
 ```
 
 

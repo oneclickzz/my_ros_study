@@ -1,23 +1,19 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 import rospy
-# from std_msgs.msg import Int32
-from msg_tutorial.msg import Mymsg
+from yh_star.msg import YhStarMsg
 
 def msg_talker():
-    rospy.init_node("py_msg_pub")
+    rospy.init_node("yh_star_sub")
     
-    pub = rospy.Publisher("burger", Mymsg, queue_size=10)
+    pub = rospy.Publisher("yh_star_topic", Mymsg, queue_size=10)
 
-    loop_rate = rospy.Rate(5)
+    loop_rate = rospy.Rate(2)
 
-    msg = Mymsg()
+    msg = YhStarMsg()
     cnt = 0
 
     while not rospy.is_shutdown():
-        # Mymsg():
-        #   time stamp
-        #   int32 data
         msg.stamp = rospy.Time.now()
         msg.data = cnt
         rospy.loginfo("send msg : %d", msg.stamp.secs)
