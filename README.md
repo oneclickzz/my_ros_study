@@ -52,6 +52,17 @@ my first ros study
     - 빌드
     - 실행
     - 같음 이름의 서버는 하나밖에 못킴
+
+## 2022년 10월 4일
+### [param_tutorial](./param_tutorial)
+- param_tutorial 패키지 생성
+- calculate_server, calculate_client, calculate_server.py calculate_client.py 노드 생성
+- 빌드
+- 실행
+- [파라미터 서버 활용](#parameter-server)
+
+### [과제4 yh_dual](./yh_dual/과제4.pdf)
+### [과제5 yh_difference](./yh_difference/과제5.pdf)
     
 ## ROS 명령어
 ### roscore
@@ -83,3 +94,19 @@ lhk15477@gmail.com:~$ catkin_create_pkg topic_tutorial roscpp rospy std_msgs
 
 ### python 권한 주기
 ex) chmod +x src/ros_study/service_tutorial/scripts/*
+파이썬 빌드할때.py 꼭
+
+### param_tutorial 계산방법 변경
+rosparam set /calculation_method ()
+ 
+### Parameter Server
+- ROS Master에서 실행되고, 변수들을 담고 있는 서버
+- ros::setParam(), ros::getParam(), rospy.set_param(), rospy.get_param() 등의 함수로 사용
+- command line에서 rosparam으로 사용 가능
+- rosparam list
+    - 파라미터 서버의 모든 파라미터를 출력
+    - rosparam get /<파라미터 이름>
+        - 파라미터의 값을 출력함
+    - rosparam seㅅ /<파라미터 이름> [파라미터 값]
+        - 파라미터의 값을 지정함
+        - rosparam set /calculation_method 2
