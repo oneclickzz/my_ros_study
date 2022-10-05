@@ -12,26 +12,13 @@ int main(int argc, char** argv)
 
     yh_check::YhCheck msg;
 
-    int cnt = 0;
-    cnt = 1 - cnt;
+    msg.data = true;
 
     while (ros::ok())
     {
         msg.stamp = ros::Time::now(); 
-        int cnt = 0;
-        msg.data1 = cnt;
-        if(msg.data1 == 0)
-        {
-            ROS_INFO("false");
-        }
-        else
-        {
-            ROS_INFO("true");
-        }
-        cnt = 1 - cnt;
         pub.publish(msg); 
-
-        
+        msg.data = !msg.data;
         loop_rate.sleep();
     }
 

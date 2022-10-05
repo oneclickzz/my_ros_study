@@ -1,13 +1,24 @@
 #include "ros/ros.h"
 #include "yh_check/YhCheck.h"
 
-void msgCallback(const yh_check::YhCheck::ConstPtr& msg)
+bool distance = true;
+bool camera = true;
+
+void distanceCallback(const yh_check::YhCheck::ConstPtr& msg)
 {
-    if (msg->data1==0 && msg->data2==0)
+    distance = msg->data;
+    if (distance && camera)
     {
-        ROS_INFO("receive msg : %d", msg->stamp.sec); 
-        ROS_INFO("receive msg : %d", msg->stamp.nsec); 
-        ROS_INFO("receive msg : OK"); 
+        ROS_INFO("OK"); 
+    }
+}
+
+void cameraCallback(const yh_check::YhCheck::ConstPtr& msg)
+{
+    camera = msg->data;
+    if (distance && camera)
+    {
+        ROS_INFO("OK"); 
     }
 }
 
@@ -16,7 +27,8 @@ int main(int argc, char** argv)
     ros::init(argc, argv, "yh_check_sub"); 
     ros::NodeHandle nh;
     
-    ros::Subscriber sub = nh.subscribe("yyy", 20, msgCallback); 
+    ros::Subscriber sub_distance = nh.subscribe("check_distance", 20, distanceCallback);
+    ros::Subscriber sub_camera = nh.subscribe("check_camera", 20, cameraCallback); 
 
     ros::spin(); 
 

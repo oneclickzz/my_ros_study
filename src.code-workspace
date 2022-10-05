@@ -1,0 +1,21 @@
+{
+	"folders": [
+		{
+			"name": "src",
+			"path": ".."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"array": "cpp",
+			"string": "cpp",
+			"string_view": "cpp",
+			"functional": "cpp",
+			"random": "cpp",
+			"cmath": "cpp",
+			"complex": "cpp",
+			"cstdlib": "cpp",
+			"chrono": "cpp"
+		}
+	}
+}

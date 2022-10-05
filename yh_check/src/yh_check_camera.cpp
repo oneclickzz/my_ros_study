@@ -12,11 +12,13 @@ int main(int argc, char** argv)
 
     yh_check::YhCheck msg;
 
+    msg.data = true;
+
     while (ros::ok())
     {
         msg.stamp = ros::Time::now(); 
-        ROS_INFO("receive msg : %d", msg.data2); 
         pub.publish(msg); 
+        msg.data = !msg.data;
         loop_rate.sleep();
     }
 
